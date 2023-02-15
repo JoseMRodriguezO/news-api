@@ -19,9 +19,10 @@ else:
     top_headlines = api.get_top_headlines(category=category)
 if top_headlines is not None:
     for article in top_headlines['articles']:
-        pprint
+
         for article in top_headlines['articles']:
             title = (article['title'] + "\n")
             url = article['url']
+            description = article['description']
             click.echo(
-                f"{title}\n{click.style  (url, fg='blue', underline=True)}\n")
+                f"{click.style(title, fg='green')}\n{click.style(description, fg='white')}\n{click.style(url, fg='blue', underline=True)}\n")
