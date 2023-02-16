@@ -17,8 +17,8 @@ if top_headlines is not None:
     articles = top_headlines['articles']
     for index, article in enumerate(articles):
         title = (f"{index + 1}. {article['title']}")
-        print()
         click.echo(click.style(title, fg='green'))
+        print()
 
     index = int(input("Enter the number of the article you want to read: ")) - 1
     if 0 <= index < len(articles):
